@@ -2,7 +2,7 @@
 
 The **Promise()** constructor is primarily used to wrap functions that do not already support promises.
 
-The Promise can be in 1 of 3 state
+The Promise can be in 1 of 3 states
 
 - **pending**: initial state, neither fulfilled nor rejected.
 - **fulfilled**: meaning that the operation was completed successfully (resolved).
