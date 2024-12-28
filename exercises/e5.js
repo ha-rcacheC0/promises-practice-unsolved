@@ -24,8 +24,8 @@ export const attachTitle = (name) => {
 
 export const getPromise = () => {
   // Your code goes here...
-  const myPromise = new Promise.resolve("MANHATTAN");
-  return myPromise.then((result) => {
+  const promise = Promise.resolve("MANHATTAN");
+  return promise.then(attachTitle).then((result) => {
     console.log(result);
   });
 };
