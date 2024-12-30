@@ -24,10 +24,11 @@ export const attachTitle = (name) => {
 
 export const getPromise = () => {
   // Your code goes here...
-  const promise = Promise.resolve("MANHATTAN");
-  return promise.then(attachTitle).then((result) => {
-    console.log(result);
-  });
+  return Promise.resolve("MANHATTAN")
+    .then(attachTitle)
+    .then((result) => {
+      console.log(result);
+    });
 };
 
 // === TEST YOURSELF ===

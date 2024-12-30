@@ -29,9 +29,7 @@ export const usersUrl = "http://localhost:3000/users/";
 
 const getLoginList = (data) => {
   // Your code goes here...
-  return data.map((user) => {
-    return user.login;
-  });
+  return data.map((user) => user.login);
 };
 
 /**
@@ -42,9 +40,7 @@ const getLoginList = (data) => {
  */
 
 // Your code goes here ...
-const getData = fetch(usersUrl).then((response) => {
-  return response.json();
-});
+const getData = fetch(usersUrl);
 
 /**
  * @task
@@ -58,10 +54,13 @@ const getData = fetch(usersUrl).then((response) => {
  */
 
 // Your code goes here ...
-export const result = getData.then((response) => {
-  console.log(getLoginList(response));
-  return getLoginList(response);
-});
+export const result = getData
+  .then((res) => res.json())
+  .then((userData) => {
+    const userLogins = getLoginList(userData);
+    console.log(userLogins);
+    return userLogins;
+  });
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"

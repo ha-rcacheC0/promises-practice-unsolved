@@ -24,8 +24,7 @@ export function iterate(arg) {
 
 export function alwaysThrows() {
   // Your code goes here...
-  let err = new Error("OH NOES");
-  throw err;
+  throw new Error("OH NOES");
 }
 
 /**
@@ -39,11 +38,7 @@ export function alwaysThrows() {
 
 export function onReject(arg) {
   // Your code goes here...
-  if (typeof arg === "object") {
-    console.log(arg.message);
-  } else {
-    console.log(arg);
-  }
+  console.log(arg.message || arg);
 }
 
 /**
@@ -68,8 +63,7 @@ export function onReject(arg) {
  */
 
 // Your code goes here...
-export const promise = Promise.resolve("resolved")
-  .then(iterate)
+export const promise = Promise.resolve(iterate(1))
   .then(iterate)
   .then(iterate)
   .then(iterate)
